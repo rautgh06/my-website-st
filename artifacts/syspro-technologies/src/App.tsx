@@ -39,7 +39,7 @@ function Wordmark({ light = false }: { light?: boolean }) {
         <span className={`absolute h-7 w-7 rounded-full border-[3px] ${light ? 'border-[hsl(var(--foreground))]' : 'border-[hsl(var(--primary))]'}`} />
         <span className={`absolute h-3 w-3 rounded-full ${light ? 'bg-[hsl(var(--foreground))]' : 'bg-[hsl(var(--primary))]'}`} />
       </span>
-      <span className={`font-display text-[1.24rem] font-semibold tracking-[-.04em] ${light ? 'text-[hsl(var(--background))]' : 'text-[hsl(var(--foreground))]'}`}>SysPro<span className={`ml-1.5 ${light ? 'text-[hsl(var(--primary))]' : 'text-[hsl(var(--accent))]'}`}>Technologies</span></span>
+      <span className={`font-display text-[1.36rem] font-bold tracking-[-.04em] ${light ? 'text-[hsl(var(--background))]' : 'text-[hsl(var(--foreground))]'}`}>SysPro<span className={`ml-1.5 ${light ? 'text-[hsl(var(--primary))]' : 'text-[hsl(var(--accent))]'}`}>Technologies</span></span>
     </a>
   );
 }
