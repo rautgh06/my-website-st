@@ -35,11 +35,11 @@ function scrollToId(id: string) {
 function Wordmark({ light = false }: { light?: boolean }) {
   return (
     <a href="#top" className="flex items-center gap-3" data-testid="link-brand">
-      <span className={`relative grid h-10 w-10 place-items-center rounded-[13px] ${light ? 'bg-[hsl(var(--primary))]' : 'bg-[hsl(var(--foreground))]'}`}>
-        <span className={`absolute h-5 w-5 rounded-full border-[3px] ${light ? 'border-[hsl(var(--foreground))]' : 'border-[hsl(var(--primary))]'}`} />
-        <span className={`absolute h-2 w-2 rounded-full ${light ? 'bg-[hsl(var(--foreground))]' : 'bg-[hsl(var(--primary))]'}`} />
+      <span className={`relative grid h-11 w-11 place-items-center rounded-[14px] ${light ? 'bg-[hsl(var(--primary))]' : 'bg-[hsl(var(--foreground))]'}`}>
+        <span className={`absolute h-6 w-6 rounded-full border-[3px] ${light ? 'border-[hsl(var(--foreground))]' : 'border-[hsl(var(--primary))]'}`} />
+        <span className={`absolute h-2.5 w-2.5 rounded-full ${light ? 'bg-[hsl(var(--foreground))]' : 'bg-[hsl(var(--primary))]'}`} />
       </span>
-      <span className={`font-display text-[1.08rem] font-semibold tracking-[-.04em] ${light ? 'text-[hsl(var(--background))]' : 'text-[hsl(var(--foreground))]'}`}>SysPro<span className={light ? 'text-[hsl(var(--primary))]' : 'text-[hsl(var(--accent))]'}>Technologies</span></span>
+      <span className={`font-display text-[1.18rem] font-semibold tracking-[-.04em] ${light ? 'text-[hsl(var(--background))]' : 'text-[hsl(var(--foreground))]'}`}>SysPro<span className={light ? 'text-[hsl(var(--primary))]' : 'text-[hsl(var(--accent))]'}>Technologies</span></span>
     </a>
   );
 }
@@ -166,7 +166,7 @@ function Careers() {
         </motion.div>
         <div className="career-frame overflow-hidden rounded-[1.5rem] shadow-[0_20px_50px_hsl(var(--foreground)/.1)]">
           <div className="flex items-center justify-between border-b border-[hsl(var(--foreground)/.1)] bg-[hsl(var(--card))] px-5 py-4"><div className="flex items-center gap-2 text-sm font-bold"><BriefcaseBusiness size={17} className="text-[hsl(var(--accent-foreground))]" /> Open application</div><span className="eyebrow text-[hsl(var(--muted-foreground))]">Secure form</span></div>
-          <iframe title="SysPro Technologies careers application form" src="https://docs.google.com/forms/d/e/1FAIpQLSeCLJSd4mjJf8Nqhfhb5GKIHw5Mfr4bDJ1g8eA9GYpysb48DQ/viewform?usp=dialog" className="h-[730px] w-full bg-[hsl(var(--card))]" data-testid="iframe-careers-form" />
+           <iframe title="SysPro Technologies careers application form" src="https://forms.gle/fFe17audQnzGgcyb8" className="h-[730px] w-full bg-[hsl(var(--card))]" data-testid="iframe-careers-form" />
         </div>
       </div>
     </div>
