@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "SysProTechnologies"
+description = "A polished technology services company website for SysProTechnologies, serving public-sector, government, and individual clients with network solutions, computer sales and servicing, maintenance, hardware support, and manpower management. Includes an embedded Google Form for job applications."
+version = "1.0.0"
+id = "artifacts/syspro-technologies"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 19233
+
+[services.development]
+run = "pnpm --filter @workspace/syspro-technologies run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/syspro-technologies", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/syspro-technologies/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "19233"
+BASE_PATH = "/"
