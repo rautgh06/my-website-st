@@ -2,11 +2,11 @@ name: Deploy Vite Site to Pages
 
 on:
   push:
-    branches: ["main"] # Change to "master" if your default branch is master
-    
+    branches: ["main"]
+
 env:
   ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: true
-  
+
 permissions:
   contents: read
   pages: write
@@ -26,28 +26,33 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      # 1. Install pnpm first so the system can read your workspace files
+      - name: Install pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 9
+
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
-          # Points to where your package.json sits
+          cache: 'pnpm'
           cache-dependency-path: './artifacts/syspro-technologies/package.json' 
 
+      # 2. Swap out npm for pnpm commands
       - name: Install dependencies
-        run: npm i
+        run: pnpm install
         working-directory: './artifacts/syspro-technologies'
 
       - name: Build site
         env:
           BASE_PATH: './'
-        run: npm run build
+        run: pnpm run build
         working-directory: './artifacts/syspro-technologies'
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Vite puts final built files into a 'dist' folder inside your project folder
           path: './artifacts/syspro-technologies/dist' 
 
       - name: Deploy to GitHub Pages
