@@ -41,7 +41,7 @@ jobs:
 
       # 2. Swap out npm for pnpm commands
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --no-frozen-lockfile
         working-directory: './artifacts/syspro-technologies'
 
       - name: Build site
