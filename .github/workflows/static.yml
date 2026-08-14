@@ -47,6 +47,7 @@ jobs:
       - name: Build site
         env:
           BASE_PATH: './'
+          PORT: 3000
         run: pnpm run build
         working-directory: './artifacts/syspro-technologies'
 
