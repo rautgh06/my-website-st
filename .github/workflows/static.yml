@@ -3,7 +3,10 @@ name: Deploy Vite Site to Pages
 on:
   push:
     branches: ["main"] # Change to "master" if your default branch is master
-
+    
+env:
+  ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: true
+  
 permissions:
   contents: read
   pages: write
@@ -32,7 +35,7 @@ jobs:
           cache-dependency-path: './artifacts/syspro-technologies/package.json' 
 
       - name: Install dependencies
-        run: npm ci
+        run: npm i
         working-directory: './artifacts/syspro-technologies'
 
       - name: Build site
