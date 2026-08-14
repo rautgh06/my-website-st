@@ -50,7 +50,7 @@ jobs:
           PORT: 3000
         run: |
           pnpm run build --outDir ./dist-github
-          echo "sysprotechnologies.org" > ./artifacts/syspro-technologies/dist-github/CNAME
+          echo "sysprotechnologies.org" > ./dist-github/CNAME
         working-directory: './artifacts/syspro-technologies'
 
       - name: Upload artifact
