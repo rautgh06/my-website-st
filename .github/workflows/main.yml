@@ -28,7 +28,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           # This tells GitHub to specifically serve your built website files
-          path: './artifacts/syspro-technologies/dist' 
+          path: './artifacts/syspro-technologies' 
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
