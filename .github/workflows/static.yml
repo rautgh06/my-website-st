@@ -49,14 +49,14 @@ jobs:
           BASE_PATH: './'
           PORT: 3000
         run: |
-          pnpm run build --outDir ./dist-github
-          echo "sysprotechnologies.org" > ./dist-github/CNAME
+          pnpm run build
+          echo "sysprotechnologies.org" > ./dist/public/CNAME
         working-directory: './artifacts/syspro-technologies'
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './artifacts/syspro-technologies/dist-github' 
+          path: './artifacts/syspro-technologies/dist/public' 
 
       - name: Deploy to GitHub Pages
         id: deployment
